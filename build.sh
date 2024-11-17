@@ -7,13 +7,13 @@
 #stop if it errors
 #
 
-file = ./w3.css
-if [[ -e $file ]] ; then
+file=./w3.css
+if [[ -e "$file" ]] ; then
 	echo "CSS file exists"
 else
     wget https://www.w3schools.com/w3css/4/w3.css
     if [[ $? -ne 0 ]] ; then
-        echo "Error al descargar w3.css"
+        echo "Error downloading w3.css"
         exit -1
     fi
 fi
